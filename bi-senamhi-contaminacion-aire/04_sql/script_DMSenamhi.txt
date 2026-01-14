@@ -1,0 +1,54 @@
+CREATE DATABASE DMSenamhi;
+GO
+
+USE DMSenamhi;
+
+
+CREATE TABLE DimEstacion (
+    CodigoEstacion INT IDENTITY(1,1) PRIMARY KEY,
+    NombreEstacion NVARCHAR(200),
+    Altitud FLOAT,
+    Longitud FLOAT,
+    Latitud FLOAT
+);
+
+
+
+CREATE TABLE DimUbicacion (
+    CodigoUbigeo NVARCHAR(10) PRIMARY KEY,
+    Departamento NVARCHAR(50),
+    Provincia NVARCHAR(50),
+    Distrito NVARCHAR(100)
+);
+
+
+
+create TABLE dbo.DimTiempo (
+    CodigoTiempo INT IDENTITY(1,1) PRIMARY KEY,
+    Año INT NOT NULL,
+    Mes INT NOT NULL,
+    Día INT NOT NULL,
+    Hora TIME(0) NOT NULL,
+    FechaCorte DATE NOT NULL
+);
+
+
+
+
+CREATE TABLE DimContaminante (
+    CodigoContaminante INT IDENTITY(1,1) PRIMARY KEY,
+    NombreContaminante NVARCHAR(50)
+);
+
+
+
+CREATE TABLE THContaminacion (
+    CodigoHecho INT IDENTITY(1,1) PRIMARY KEY,
+    CodigoEstacion INT FOREIGN KEY REFERENCES DimEstacion(CodigoEstacion),
+    CodigoUbigeo NVARCHAR(10) FOREIGN KEY REFERENCES DimUbicacion(CodigoUbigeo),
+    CodigoTiempo INT FOREIGN KEY REFERENCES DimTiempo(CodigoTiempo),
+    CodigoContaminante INT FOREIGN KEY REFERENCES DimContaminante(CodigoContaminante),
+    ValorPM10 FLOAT,
+    ValorPM2_5 FLOAT,
+    ValorNO2 FLOAT
+);

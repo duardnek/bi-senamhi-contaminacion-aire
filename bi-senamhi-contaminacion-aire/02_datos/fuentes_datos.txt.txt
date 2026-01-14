@@ -1,0 +1,8 @@
+Datos ambientales:
+https://www.datosabiertos.gob.pe/dataset/monitoreo-de-los-contaminantes-del-aire-en-lima-metropolitana-servicio-nacional-de
+
+Datos de salud:
+CDC Perú – Vigilancia de Infecciones Respiratorias Agudas (IRA)
+https://www.datosabiertos.gob.pe/dataset/vigilancia-epidemiologica-de-infecciones-respiratoiras-agudas-ira
+
+
