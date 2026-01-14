@@ -1,32 +1,39 @@
-# 📊 Monitoreo de Contaminantes del Aire – Lima Metropolitana (SENAMHI)
+# Business Intelligence – Monitoreo de Contaminantes del Aire (SENAMHI)
 
-Proyecto académico de Business Intelligence orientado al análisis y visualización
-de la calidad del aire en Lima Metropolitana, utilizando datos abiertos del SENAMHI
-y su relación con indicadores de salud.
+Proyecto académico de Business Intelligence orientado al análisis de la calidad del aire en Lima Metropolitana, utilizando datos abiertos del SENAMHI e información de Infecciones Respiratorias Agudas (IRA).
 
-## 🎯 Objetivo
-Analizar los niveles de contaminantes del aire y generar indicadores que apoyen
-la toma de decisiones mediante dashboards interactivos.
+## Objetivo
+Diseñar un sistema BI que permita analizar, visualizar y apoyar la toma de decisiones relacionadas con la gestión ambiental y la salud pública.
 
-## 🧰 Tecnologías utilizadas
+## Tecnologías utilizadas
 - SQL Server
-- SQL Server Integration Services (SSIS)
+- SSIS (ETL)
 - Power BI
-- Modelado Dimensional
-- ETL
+- Modelo Dimensional (Data Mart)
+- DAX
 
-## 📂 Dataset
-Los datos provienen de fuentes oficiales:
-- Servicio Nacional de Meteorología e Hidrología del Perú (SENAMHI)
-- Datos abiertos del sector salud
+## Descripción del proceso
+- Limpieza y transformación de datos ambientales y de salud
+- Construcción de un Data Mart dimensional
+- Desarrollo de procesos ETL
+- Creación de dashboards analíticos e indicadores
+- Análisis exploratorio Aire–Salud
 
-El dataset se incluye con fines académicos y de análisis.
+## Dashboards desarrollados
+- Resumen general de contaminantes
+- Análisis temporal
+- Comparación de estaciones
+- Alertas ambientales
+- Correlación Aire–Salud
 
-## 📈 Resultados
-- Construcción de un Data Mart ambiental
-- Dashboards en Power BI para análisis temporal y comparativo
-- Indicadores de contaminación del aire
+## Rol personal
+- Modelado dimensional
+- Desarrollo de procesos ETL
+- Construcción de dashboards en Power BI
+- Análisis de resultados
 
-## 👤 Autor
-Eduardo Franco Castro Quicaña  
-Estudiante de Ingeniería de Sistemas
+## Documento
+El informe completo del proyecto se encuentra en la carpeta `/informe`.
+
+## Nota
+Proyecto académico desarrollado en equipo – Universidad César Vallejo.
