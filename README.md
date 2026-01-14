@@ -1,60 +1,44 @@
-# 🌍 BI-SENAMHI: Inteligencia de Negocios para el Monitoreo de Calidad del Aire y Salud en Lima
+# 🌍 BI-SENAMHI: Sistema de Inteligencia de Negocios para el Monitoreo de Calidad del Aire y Salud Pública
 
-![Data Analysis](https://img.shields.io/badge/Focus-Business%20Intelligence-blue)
-![SQL Server](https://img.shields.io/badge/DB-SQL%20Server-red)
-![Power BI](https://img.shields.io/badge/Viz-Power%20BI-yellow)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+[![SQL Server](https://img.shields.io/badge/Database-SQL%20Server-red?style=flat-square&logo=microsoft-sql-server)](https://www.microsoft.com/sql-server)
+[![SSIS](https://img.shields.io/badge/ETL-SSIS-orange?style=flat-square)](https://docs.microsoft.com/sql/integration-services/)
+[![Power BI](https://img.shields.io/badge/Visualización-Power%20BI-yellow?style=flat-square&logo=power-bi)](https://powerbi.microsoft.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-Este proyecto desarrolla una solución integral de **Business Intelligence (BI)** para centralizar, analizar y visualizar datos sobre contaminantes atmosféricos (PM2.5, PM10, NO₂) y su correlación con Infecciones Respiratorias Agudas (IRA) en Lima Metropolitana, utilizando datos abiertos de **SENAMHI** y del sistema de vigilancia epidemiológica.
+## 📋 Descripción del Proyecto
+Este proyecto desarrolla una solución de **Business Intelligence (BI)** extremo a extremo para el análisis de contaminantes atmosféricos (PM2.5, PM10, NO₂) en Lima Metropolitana. La innovación principal radica en la integración de datos abiertos del **SENAMHI** con indicadores epidemiológicos de **Infecciones Respiratorias Agudas (IRA)**, permitiendo identificar correlaciones críticas entre la calidad del aire y la salud pública.
 
-## 📊 Propósito del Proyecto
-Transformar datos heterogéneos y dispersos en información estratégica que permita a las autoridades y ciudadanos identificar periodos críticos de contaminación y entender el impacto real de la calidad del aire en la salud pública de los distritos monitoreados.
+## 🚀 Desafío Técnico
+* **Fragmentación de Datos:** Consolidación de fuentes heterogéneas (SENAMHI y Vigilancia Epidemiológica).
+* **Calidad de Datos:** Tratamiento de valores nulos y estandarización de unidades de medida ambiental.
+* **Escalabilidad:** Diseño de un modelo dimensional que soporte el crecimiento histórico de registros de monitoreo.
 
 ## 🛠️ Stack Tecnológico
-* **Base de Datos (OLTP):** Microsoft SQL Server.
-* **ETL (Extracción, Transformación y Carga):** SQL Server Integration Services (SSIS).
-* **Data Mart (OLAP):** Diseño en esquema de estrella (Star Schema).
-* **Visualización de Datos:** Power BI Desktop / Power BI Service.
-* **Lenguajes:** T-SQL (Scripts de BD) y DAX (Medidas analíticas).
+* **Data Warehouse:** Microsoft SQL Server (OLTP y Data Mart).
+* **Ingeniería de Datos (ETL):** SQL Server Integration Services (SSIS).
+* **Modelado:** Star Schema (Esquema de Estrella) con dimensiones de Tiempo, Ubicación y Estación.
+* **Analítica:** Power BI utilizando lenguaje DAX para métricas avanzadas y comparativas contra los ECAs (Estándares de Calidad Ambiental).
 
-## 🏗️ Arquitectura de la Solución
-El sistema sigue el flujo clásico de una solución de BI:
-1.  **Fuentes de Datos:** Datasets de SENAMHI (Contaminación) y registros de salud (IRAs, Neumonías, Defunciones).
-2.  **Staging & ETL:** Limpieza de datos, manejo de nulos y estandarización de unidades de medida.
-3.  **Data Mart (DMSenamhi):** * **Hechos:** `THContaminacion` y `Fact_AireSalud`.
-    * **Dimensiones:** `DimEstacion`, `DimUbicacion`, `DimTiempo`, `DimContaminante`.
+## 🏗️ Arquitectura de Datos
+El sistema se basa en un **Data Mart (DMSenamhi)** estructurado de la siguiente manera:
+- **Hechos:** - `THContaminacion`: Métricas horarias/diarias de contaminantes.
+    - `Fact_AireSalud`: Tabla agregada que vincula promedios anuales de polución con tasas de mortalidad y hospitalización por IRA.
+- **Dimensiones:** Estación, Contaminante, Tiempo (Jerárquico) y Ubicación Geográfica.
 
+## 📊 Dashboards de Alto Impacto
+Se diseñaron 5 vistas analíticas orientadas a la toma de decisiones:
+1. **Vista Gerencial:** Indicadores clave (KPIs) de calidad del aire actual.
+2. **Análisis de Tendencias:** Evolución histórica y estacionalidad de contaminantes.
+3. **Benchmarking de Estaciones:** Ranking de los distritos con mayor estrés ambiental.
+4. **Cumplimiento Normativo:** Semáforo de alertas basado en límites de la OMS y MINAM.
+5. **Panel Aire-Salud:** Correlación visual entre niveles de NO₂/PM2.5 y el incremento de neumonías y defunciones.
 
+## 👥 Equipo de Desarrollo
+Proyecto realizado por estudiantes de Ingeniería de Sistemas - **Universidad César Vallejo**:
+* **Sandro Cavero** | **Eduardo Castro** | **Piero Cruz**
+* **Franz Diaz** | **Benjamin Gonzales** | **Jack Soto**
 
-## 📈 Dashboards Principales
-El reporte de Power BI incluye 5 páginas de análisis profundo:
-* **Resumen General:** KPI's de niveles de contaminación actuales.
-* **Análisis Temporal:** Evolución histórica por mes y año.
-* **Comparativa de Estaciones:** Identificación de las zonas con mayor carga contaminante.
-* **Alertas de Calidad:** Comparación contra los Estándares de Calidad Ambiental (ECA).
-* **Correlación Aire-Salud:** Cruce de datos entre niveles de PM2.5/PM10 y el incremento de enfermedades respiratorias por grupo etario.
+**Asesor:** Dr. Erick Giovanny Flores Chacón
 
-
-
-## 🚀 Cómo empezar
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone [https://github.com/tu-usuario/nombre-del-repo.git](https://github.com/tu-usuario/nombre-del-repo.git)
-    ```
-2.  **Base de Datos:** Ejecuta los scripts de la carpeta `/sql` para crear la estructura de tablas.
-3.  **Procesos ETL:** Abre el proyecto de SSIS en Visual Studio para cargar los datos desde los archivos fuente en `/data`.
-4.  **Power BI:** Abre el archivo `.pbix` y configura la cadena de conexión a tu servidor local.
-
-## 👥 Autores
-Proyecto desarrollado por estudiantes de Ingeniería de Sistemas de la **Universidad César Vallejo**:
-* **Cavero Gomero, Sandro Luis**
-* **Castro Quicaña, Eduardo Franco**
-* **Cruz Laos, Piero Fabrizio**
-* **Diaz Asto, Franz Jhamir**
-* **Gonzales Lopez, Benjamin Elivelton**
-* **Soto Romero, Jack Steven Francesco**
-
-**Asesor:** Dr. Flores Chacón, Erick Giovanny
-
-## 📄 Licencia
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+---
+*Este proyecto fue desarrollado bajo los estándares de los Objetivos de Desarrollo Sostenible (ODS), promoviendo ciudades y comunidades más sostenibles.*
