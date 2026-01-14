@@ -1,0 +1,26 @@
+-- Crear la base de datos
+CREATE DATABASE BI_Aire_Salud;
+GO
+
+-- Usar la base de datos recién creada
+USE BI_Aire_Salud;
+GO
+
+-- Crear la tabla Stage_IRA
+CREATE TABLE Stage_IRA (
+    departamento VARCHAR(100),
+    provincia VARCHAR(100),
+    distrito VARCHAR(100),
+    ano INT,
+    semana INT,
+    sub_reg_nt VARCHAR(100),
+    ubigeo VARCHAR(10),
+    ira_no_neumonia INT,
+    neumonias_men5 INT,
+    neumonias_60mas INT,
+    hospitalizados_men5 INT,
+    hospitalizados_60mas INT,
+    defunciones_men5 INT,
+    defunciones_60mas INT
+);
+GO
