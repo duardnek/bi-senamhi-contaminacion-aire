@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ## 📋 Descripción del Proyecto
-Este proyecto desarrolla una solución de **Business Intelligence (BI)** extremo a extremo para el análisis de contaminantes atmosféricos (PM2.5, PM10, NO₂) en Lima Metropolitana. La innovación principal radica en la integración de datos abiertos del **SENAMHI** con indicadores epidemiológicos de **Infecciones Respiratorias Agudas (IRA)**, permitiendo identificar correlaciones críticas entre la calidad del aire y la salud pública.
+Este proyecto desarrolla una solución de Business Intelligence (BI) extremo a extremo para el análisis de contaminantes atmosféricos (PM2.5, PM10, NO₂) en Lima Metropolitana. La innovación principal radica en la integración de datos abiertos del SENAMHI con indicadores epidemiológicos de Infecciones Respiratorias Agudas (IRA)**, permitiendo identificar correlaciones críticas entre la calidad del aire y la salud pública.
 
 ## 🚀 Desafío Técnico
 * **Fragmentación de Datos:** Consolidación de fuentes heterogéneas (SENAMHI y Vigilancia Epidemiológica).
